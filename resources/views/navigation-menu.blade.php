@@ -16,6 +16,30 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('registrations.index') }}" :active="request()->routeIs('registrations.index')">
+                        {{ __('Registrations') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('records') }}" :active="request()->routeIs('records')">
+                        {{ __('Records') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('payments') }}" :active="request()->routeIs('payments')">
+                        {{ __('Payments') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('reports') }}" :active="request()->routeIs('reports')">
+                        {{ __('Reports') }}
+                    </x-nav-link>
+                </div>
+
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">

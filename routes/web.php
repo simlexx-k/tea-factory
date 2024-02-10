@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FarmerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +25,21 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/farmers/create', [FarmerController::class, 'create']);
+    Route::post('/farmers', [FarmerController::class, 'store']);
 });
+use App\Http\Controllers\RegistrationController;
+
+Route::get('/registrations', [RegistrationController::class, 'index'])->name('registrations.index');
+
+use App\Http\Controllers\RecordsController;
+
+Route::get('/records', [RecordsController::class, 'records'])->name('records');
+
+use App\Http\Controllers\PaymentsController;
+
+Route::get('/payments', [PaymentsController::class, 'payments'])->name('payments');
+
+use App\Http\Controllers\ReportsController;
+
+Route::get('/reports', [ReportsController::class, 'reports'])->name('reports');
