@@ -17,9 +17,36 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('registrations') }}" :active="request()->routeIs('registrations')">
-                        {{ __('Registrations') }}
-                    </x-nav-link>
+                    <x-dropdown align="right" width="48">
+                        <x-slot name="trigger">
+                            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 dark:active:bg-gray-700 transition ease-in-out duration-150">
+                                {{ __('Registrations') }}
+                                <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <!-- Register Farmers -->
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                {{ __('Manage Registrations') }}
+                            </div>
+                            <x-dropdown-link href="{{ route('registrations') }}">
+                                {{ __('Register Farmers') }}
+                            </x-dropdown-link>
+
+                            <!-- View Farmers -->
+                            <x-dropdown-link href="{{ route('registrations') }}">
+                                {{ __('View Farmers') }}
+                            </x-dropdown-link>
+
+                            <!-- Manage Pickpoints -->
+                            <x-dropdown-link href="{{ route('registrations') }}">
+                                {{ __('Manage Pickpoints') }}
+                            </x-dropdown-link>
+                        </x-slot>
+                    </x-dropdown>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('records') }}" :active="request()->routeIs('records')">
@@ -165,6 +192,18 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('registrations') }}" :active="request()->routeIs('registrations')">
+                {{ __('Registrations') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('records') }}" :active="request()->routeIs('records')">
+                {{ __('Records') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('payments') }}" :active="request()->routeIs('payments')">
+                {{ __('Payments') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('reports') }}" :active="request()->routeIs('reports')">
+                {{ __('Reports') }}
             </x-responsive-nav-link>
         </div>
 
