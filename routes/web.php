@@ -30,7 +30,7 @@ Route::middleware([
 });
 use App\Http\Controllers\RegistrationController;
 
-Route::get('/registrations', [RegistrationController::class, 'index'])->name('registrations.index');
+Route::get('/registrations', [RegistrationController::class, 'registrations'])->name('registrations');
 
 use App\Http\Controllers\RecordsController;
 
