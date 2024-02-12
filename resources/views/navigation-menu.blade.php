@@ -42,7 +42,7 @@
                             </x-dropdown-link>
 
                             <!-- Manage Pickpoints -->
-                            <x-dropdown-link href="{{ route('registrations') }}">
+                            <x-dropdown-link href="{{ route('pickpoints.create') }}">
                                 {{ __('Manage Pickpoints') }}
                             </x-dropdown-link>
                         </x-slot>
@@ -101,22 +101,22 @@
                             </div>
 
                             <!-- Payrolls -->
-                            <x-dropdown-link href="{{ route('records') }}">
+                            <x-dropdown-link href="{{ route('payments') }}">
                                 {{ __('Create a Payroll') }}
                             </x-dropdown-link>
 
                             <!-- View Previous Payrolls -->
-                            <x-dropdown-link href="{{ route('records') }}">
+                            <x-dropdown-link href="{{ route('payments') }}">
                                 {{ __('View Finalised Payrolls') }}
                             </x-dropdown-link>
 
                             <!-- Manage Deductions -->
-                            <x-dropdown-link href="{{ route('records') }}">
+                            <x-dropdown-link href="{{ route('payments') }}">
                                 {{ __('Manage Deductions') }}
                             </x-dropdown-link>
 
-                            <!-- Manage Payrates -->
-                            <x-dropdown-link href="{{ route('records') }}">
+                            <!-- Manage Pay Rates -->
+                            <x-dropdown-link href="{{ route('payments') }}">
                                 {{ __('Manage Pay Rates') }}
                             </x-dropdown-link>
 
@@ -153,7 +153,7 @@
 
                             <!-- Generate Tea Delivery Records -->
                             <x-dropdown-link href="{{ route('reports') }}">
-                                {{ __('Generate Tea Delivery Records') }}
+                                {{ __('Generate Tea Delivery Reports') }}
                             </x-dropdown-link>
 
                             <!-- Manage Another Thing -->

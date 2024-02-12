@@ -43,3 +43,8 @@ Route::get('/payments', [PaymentsController::class, 'payments'])->name('payments
 use App\Http\Controllers\ReportsController;
 
 Route::get('/reports', [ReportsController::class, 'reports'])->name('reports');
+
+use App\Http\Controllers\PickPointController;
+
+Route::get('/pickpoints/create', [PickPointController::class, 'create'])->name('pickpoints.create');
+Route::post('/pickpoints', [PickPointController::class, 'store'])->name('pickpoints.store');
