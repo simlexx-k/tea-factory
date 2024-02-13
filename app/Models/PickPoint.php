@@ -4,9 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 class PickPoint extends Model
 {
-    use HasFactory;
+    use HasFactory, HasApiTokens, Notifiable;
     protected $fillable = ['name', 'description'];
-}
+
+    public function scopeSearch($query, $value){
+    $query->where('name','like',"%{$value}%")->orWhere('description','like',"%{$value}%");
+
+}}
+

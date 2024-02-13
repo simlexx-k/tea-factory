@@ -9,7 +9,9 @@
         @livewire('pick-point-registration')
     </div>
     <x-section-border />
-
+    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+        @livewire('pick-point-list')
+    </div>
 
 </x-app-layout>
 

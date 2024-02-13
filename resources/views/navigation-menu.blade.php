@@ -12,7 +12,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
@@ -32,17 +32,17 @@
                             <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Manage Registrations') }}
                             </div>
-                            <x-dropdown-link href="{{ route('registrations') }}">
+                            <x-dropdown-link href="{{ route('registrations') }}" wire:navigate>
                                 {{ __('Register Farmers') }}
                             </x-dropdown-link>
 
                             <!-- View Farmers -->
-                            <x-dropdown-link href="{{ route('registrations') }}">
+                            <x-dropdown-link href="{{ route('registrations') }}" wire:navigate>
                                 {{ __('View Farmers') }}
                             </x-dropdown-link>
 
                             <!-- Manage Pickpoints -->
-                            <x-dropdown-link href="{{ route('pickpoints.create') }}">
+                            <x-dropdown-link href=" {{ route('pickpoints.create') }}" wire:navigate>
                                 {{ __('Manage Pickpoints') }}
                             </x-dropdown-link>
                         </x-slot>
@@ -66,17 +66,17 @@
                             </div>
 
                             <!-- Record Daily Deliveries -->
-                            <x-dropdown-link href="{{ route('records') }}">
+                            <x-dropdown-link href="{{ route('records') }}" wire:navigate>
                                 {{ __('Record Daily Deliveries') }}
                             </x-dropdown-link>
 
                             <!-- View Recorded Deliveries -->
-                            <x-dropdown-link href="{{ route('records') }}">
+                            <x-dropdown-link href="{{ route('records') }}" wire:navigate>
                                 {{ __('View Recorded Deliveries') }}
                             </x-dropdown-link>
 
                             <!-- Manage Records -->
-                            <x-dropdown-link href="{{ route('records') }}">
+                            <x-dropdown-link href="{{ route('records') }}" wire:navigate>
                                 {{ __('Manage Records') }}
                             </x-dropdown-link>
                         </x-slot>
@@ -101,22 +101,22 @@
                             </div>
 
                             <!-- Payrolls -->
-                            <x-dropdown-link href="{{ route('payments') }}">
+                            <x-dropdown-link href="{{ route('payments') }}" wire:navigate>
                                 {{ __('Create a Payroll') }}
                             </x-dropdown-link>
 
                             <!-- View Previous Payrolls -->
-                            <x-dropdown-link href="{{ route('payments') }}">
+                            <x-dropdown-link href="{{ route('payments') }}" wire:navigate>
                                 {{ __('View Finalised Payrolls') }}
                             </x-dropdown-link>
 
                             <!-- Manage Deductions -->
-                            <x-dropdown-link href="{{ route('payments') }}">
+                            <x-dropdown-link href="{{ route('payments') }}" wire:navigate>
                                 {{ __('Manage Deductions') }}
                             </x-dropdown-link>
 
                             <!-- Manage Pay Rates -->
-                            <x-dropdown-link href="{{ route('payments') }}">
+                            <x-dropdown-link href="{{ route('payments') }}" wire:navigate>
                                 {{ __('Manage Pay Rates') }}
                             </x-dropdown-link>
 
@@ -142,22 +142,22 @@
                             </div>
 
                             <!-- Payrolls Reports-->
-                            <x-dropdown-link href="{{ route('reports') }}">
+                            <x-dropdown-link href="{{ route('reports') }}" wire:navigate>
                                 {{ __('Generate Payroll Reports') }}
                             </x-dropdown-link>
 
                             <!-- Manage Payrates -->
-                            <x-dropdown-link href="{{ route('reports') }}">
+                            <x-dropdown-link href="{{ route('reports') }}" wire:navigate>
                                 {{ __('Manage Pay Rates Reports') }}
                             </x-dropdown-link>
 
                             <!-- Generate Tea Delivery Records -->
-                            <x-dropdown-link href="{{ route('reports') }}">
+                            <x-dropdown-link href="{{ route('reports') }}" wire:navigate>
                                 {{ __('Generate Tea Delivery Reports') }}
                             </x-dropdown-link>
 
                             <!-- Manage Another Thing -->
-                            <x-dropdown-link href="{{ route('reports') }}">
+                            <x-dropdown-link href="{{ route('reports') }}" wire:navigate>
                                 {{ __('Another Thing') }}
                             </x-dropdown-link>
 
@@ -193,12 +193,12 @@
                                     </div>
 
                                     <!-- Team Settings -->
-                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
+                                    <x-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}" wire:navigate>
                                         {{ __('Team Settings') }}
                                     </x-dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                        <x-dropdown-link href="{{ route('teams.create') }}">
+                                        <x-dropdown-link href="{{ route('teams.create') }}" wire:navigate>
                                             {{ __('Create New Team') }}
                                         </x-dropdown-link>
                                     @endcan
@@ -248,12 +248,12 @@
                                 {{ __('Manage Account') }}
                             </div>
 
-                            <x-dropdown-link href="{{ route('profile.show') }}">
+                            <x-dropdown-link href="{{ route('profile.show') }}" wire:navigate>
                                 {{ __('Profile') }}
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                                <x-dropdown-link href="{{ route('api-tokens.index') }}">
+                                <x-dropdown-link href="{{ route('api-tokens.index') }}" wire:navigate>
                                     {{ __('API Tokens') }}
                                 </x-dropdown-link>
                             @endif
@@ -264,7 +264,7 @@
                             <form method="POST" action="{{ route('logout') }}" x-data>
                                 @csrf
 
-                                <x-dropdown-link href="{{ route('logout') }}"
+                                <x-dropdown-link href="{{ route('logout') }}" wire:navigate
                                          @click.prevent="$root.submit();">
                                     {{ __('Log Out') }}
                                 </x-dropdown-link>
