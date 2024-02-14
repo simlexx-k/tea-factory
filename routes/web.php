@@ -30,6 +30,7 @@ Route::middleware([
 use App\Http\Controllers\FarmerController;
 Route::get('/farmers/create', [FarmerController::class, 'create'])->name('farmers.create');
 Route::post('/farmers', [FarmerController::class, 'store'])->name('farmers.store');
+Route::get('/farmers/list', [FarmerController::class, 'create'])->name('farmers.list');
 
 use App\Http\Controllers\RegistrationController;
 

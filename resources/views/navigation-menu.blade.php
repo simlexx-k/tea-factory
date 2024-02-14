@@ -37,7 +37,7 @@
                             </x-dropdown-link>
 
                             <!-- View Farmers -->
-                            <x-dropdown-link href="{{ route('registrations') }}" wire:navigate>
+                            <x-dropdown-link href="{{ route('farmers.list') }}" wire:navigate>
                                 {{ __('View Farmers') }}
                             </x-dropdown-link>
 

@@ -24,8 +24,8 @@ class FarmerController extends Controller
             // Add more validation rules as needed
         ]);
 
-        $farmer = Farmer::create($validatedData);
+        Farmer::create($validatedData);
 
-        return redirect('/')->with('success', 'Farmer registered successfully!');
+        return redirect()->route('farmers.create')->with('success', 'Farmer added successfully!');
     }
 }

@@ -6,11 +6,6 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-        @livewire('register-farmer')
-    </div>
-    <x-section-border />
-    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
         @livewire('farmers-list')
     </div>
-
 </x-app-layout>
