@@ -17,7 +17,7 @@ class FarmerController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:farmers|max:255',
-            'pickpoint' => 'required|string|max:255',
+            'pickpoint' => 'required',
             'phone' => ['required', 'regex:/^\+?[0-9]{10,}$/i'],
             'account' => 'required|integer|unique:farmers|max:255',
             'isValid' => 'required|bool|max:255',

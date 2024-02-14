@@ -32,7 +32,7 @@
                             <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Manage Registrations') }}
                             </div>
-                            <x-dropdown-link href="{{ route('registrations') }}" wire:navigate>
+                            <x-dropdown-link href="{{ route('farmers.create') }}" wire:navigate>
                                 {{ __('Register Farmers') }}
                             </x-dropdown-link>
 

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FarmerController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +25,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/farmers/create', [FarmerController::class, 'create']);
-    Route::post('/farmers', [FarmerController::class, 'store']);
 });
+
+use App\Http\Controllers\FarmerController;
+Route::get('/farmers/create', [FarmerController::class, 'create'])->name('farmers.create');
+Route::post('/farmers', [FarmerController::class, 'store'])->name('farmers.store');
+
 use App\Http\Controllers\RegistrationController;
 
 Route::get('/registrations', [RegistrationController::class, 'registrations'])->name('registrations');
@@ -48,3 +51,4 @@ use App\Http\Controllers\PickPointController;
 
 Route::get('/pickpoints/create', [PickPointController::class, 'create'])->name('pickpoints.create');
 Route::post('/pickpoints', [PickPointController::class, 'store'])->name('pickpoints.store');
+
