@@ -13,6 +13,7 @@ class RegisterFarmer extends Component
     public $name;
     public $email;
     public $pickpoint;
+    public $selectedPickpoint;
     public $phone;
     public $account;
     public $isValid;
@@ -25,7 +26,7 @@ class RegisterFarmer extends Component
     protected $rules = [
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:farmers|max:255',
-        'pickpoint' => 'required|max:255',
+        'selectedPickpoint' => 'required|max:255',
         'phone' => 'required|string|max:255',
         'account' => 'required|string|max:255',
         'isValid' => 'required|boolean',
@@ -42,13 +43,13 @@ class RegisterFarmer extends Component
 
     public function save()
     {
-        $processedPickpoint = implode(', ', $this->pickpoint);
+
         $this->validate();
 
         Farmer::create([
             'name' => $this->name,
             'email' => $this->email,
-            'pickpoint' => $this->$processedPickpoint,
+            'pickpoint' => $this->selectedPickpoint,
             'phone' => $this->phone,
             'account' => $this->account,
             'isValid' => $this->isValid,
@@ -57,7 +58,7 @@ class RegisterFarmer extends Component
 
         session()->flash('success', 'Farmer registered successfully!');
 
-        $this->reset(['name', 'pickpoint', 'phone', 'account', 'isValid']);
+        $this->reset('selectedPickpoint', 'name', 'email', 'phone', 'account', 'isValid');
     }
 
     public function render()

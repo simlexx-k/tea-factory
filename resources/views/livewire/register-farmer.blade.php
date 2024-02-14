@@ -23,15 +23,14 @@
             </div>
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="pickpoint" value="{{ __('Pick Point') }}">Pick Point</x-label>
-                <select wire:model="pickpoint" id="pickpoint" class="form-control">
-                    <option value=" ">Select Pick Point</option>
+                <select wire:model="selectedPickpoint" id="pickpoint" class="form-control">
+                    <option value="">Select Pick Point</option>
                     @foreach($pickpoint as $name)
                         <option value="{{ $name }}">{{ $name }}</option>
                     @endforeach
                 </select>
-                @error('pickpoint') <span class="error">{{ $message }}</span> @enderror
+                @error('selectedPickpoint') <span class="error">{{ $message }}</span> @enderror
             </div>
-
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="phone" value="{{ __('Phone Number') }}" />
                 <x-input id="phone" class="mt-1 block w-full" wire:model="phone" required></x-input>

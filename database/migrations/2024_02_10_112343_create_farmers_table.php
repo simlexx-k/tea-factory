@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table ->string('name');
             $table ->string('email')->unique();
-            $table -> array('pickpoint');
+            $table -> string('pickpoint');
             $table ->integer('phone');
             $table ->integer('account');
             $table ->boolean('isValid');
