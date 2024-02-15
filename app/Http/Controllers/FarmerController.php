@@ -11,6 +11,10 @@ class FarmerController extends Controller
     {
         return view('farmers.create');
     }
+    public function list()
+    {
+        return view('farmers.list');
+    }
 
     public function store(Request $request)
     {
