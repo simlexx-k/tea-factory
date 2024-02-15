@@ -40,6 +40,8 @@ use App\Http\Controllers\RecordsController;
 
 Route::get('/records/create', [RecordsController::class, 'create'])->name('records.create');
 Route::get('/records/list', [RecordsController::class, 'list'])->name('records.list');
+Route::get('/records/manage', [RecordsController::class, 'manage'])->name('records.manage');
+
 
 use App\Http\Controllers\PaymentsController;
 
@@ -53,4 +55,6 @@ use App\Http\Controllers\PickPointController;
 
 Route::get('/pickpoints/create', [PickPointController::class, 'create'])->name('pickpoints.create');
 Route::post('/pickpoints', [PickPointController::class, 'store'])->name('pickpoints.store');
+
+
 

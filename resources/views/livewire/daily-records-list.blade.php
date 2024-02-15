@@ -36,6 +36,10 @@
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             @include('livewire.includes.table-sortable-th',[
+                                'name' => 'farmer_id',
+                                'displayName' => 'Farmer ID'
+                            ])
+                            @include('livewire.includes.table-sortable-th',[
                                 'name' => 'farmer_name',
                                 'displayName' => 'Name'
                             ])
@@ -57,6 +61,7 @@
                         <tbody>
                         @foreach ($records as $records)
                             <tr wire:key="{{ $records->farmer_id }}" class="border-b dark:border-gray-700">
+                                <td class="px-4 py-3">{{ $records->farmer_id }}</td>
                                 <th scope="row"
                                     class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $records->farmer_name }}</th>

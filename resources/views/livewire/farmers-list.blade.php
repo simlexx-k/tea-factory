@@ -36,6 +36,10 @@
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             @include('livewire.includes.table-sortable-th',[
+                             'name' => 'id',
+                             'displayName' => 'Farmer ID'
+                         ])
+                            @include('livewire.includes.table-sortable-th',[
                                 'name' => 'name',
                                 'displayName' => 'Name'
                             ])
@@ -56,10 +60,6 @@
                               'displayName' => 'Account Number'
                             ])
                             @include('livewire.includes.table-sortable-th',[
-                            'name' => 'isValid',
-                            'displayName' => 'Validation'
-                          ])
-                            @include('livewire.includes.table-sortable-th',[
                                 'name' => 'created_at',
                                 'displayName' => 'Date Registered'
                             ])
@@ -72,14 +72,15 @@
                         <tbody>
                         @foreach ($farmers as $farmers)
                             <tr wire:key="{{ $farmers->id }}" class="border-b dark:border-gray-700">
+                                <td class="px-4 py-3">{{ $farmers->id }}</td>
                                 <th scope="row"
                                     class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $farmers->name }}</th>
+
                                 <td class="px-4 py-3">{{ $farmers->email }}</td>
                                 <td class="px-4 py-3">{{ $farmers->pickpoint }}</td>
                                 <td class="px-4 py-3">{{ $farmers->phone }}</td>
                                 <td class="px-4 py-3">{{ $farmers->account }}</td>
-                                <td class="px-4 py-3">{{ $farmers->isValid }}</td>
                                 <td class="px-4 py-3">{{ $farmers->created_at }}</td>
                                 <!-- <td class="px-4 py-3">{{ $farmers->updated_at }}</td> -->
                                 <td class="px-4 py-3 flex items-center justify-end">

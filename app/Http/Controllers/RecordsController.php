@@ -16,7 +16,10 @@ class RecordsController extends Controller
     {
         return view('records.list');
     }
-
+    public function manage()
+    {
+        return view('records.manage');
+    }
     public function store(Request $request)
     {
         // Validate request

@@ -76,7 +76,7 @@
                             </x-dropdown-link>
 
                             <!-- Manage Records -->
-                            <x-dropdown-link href="{{ route('records.create') }}" wire:navigate>
+                            <x-dropdown-link href="{{ route('records.manage') }}" wire:navigate>
                                 {{ __('Manage Records') }}
                             </x-dropdown-link>
                         </x-slot>

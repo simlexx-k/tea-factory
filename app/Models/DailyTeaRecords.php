@@ -16,6 +16,6 @@ protected $fillable = ['supply_date', 'farmer_name', 'tea_quantity', 'farmer_id'
 }
     public function scopeSearch($query, $value)
     {
-        $query->where('name', 'like', "%{$value}%")->orWhere('description', 'like', "%{$value}%");
+        $query->where('farmer_name', 'like', "%{$value}%")->orWhere('farmer_id', 'like', "%{$value}%");
     }
 }
