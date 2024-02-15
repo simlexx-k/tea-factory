@@ -38,7 +38,8 @@ Route::get('/registrations', [RegistrationController::class, 'registrations'])->
 
 use App\Http\Controllers\RecordsController;
 
-Route::get('/records', [RecordsController::class, 'records'])->name('records');
+Route::get('/records/create', [RecordsController::class, 'create'])->name('records.create');
+Route::get('/records/list', [RecordsController::class, 'list'])->name('records.list');
 
 use App\Http\Controllers\PaymentsController;
 

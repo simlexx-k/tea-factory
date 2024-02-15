@@ -66,17 +66,17 @@
                             </div>
 
                             <!-- Record Daily Deliveries -->
-                            <x-dropdown-link href="{{ route('records') }}" wire:navigate>
+                            <x-dropdown-link href="{{ route('records.create') }}" wire:navigate>
                                 {{ __('Record Daily Deliveries') }}
                             </x-dropdown-link>
 
                             <!-- View Recorded Deliveries -->
-                            <x-dropdown-link href="{{ route('records') }}" wire:navigate>
+                            <x-dropdown-link href="{{ route('records.list') }}" wire:navigate>
                                 {{ __('View Recorded Deliveries') }}
                             </x-dropdown-link>
 
                             <!-- Manage Records -->
-                            <x-dropdown-link href="{{ route('records') }}" wire:navigate>
+                            <x-dropdown-link href="{{ route('records.create') }}" wire:navigate>
                                 {{ __('Manage Records') }}
                             </x-dropdown-link>
                         </x-slot>
@@ -295,7 +295,7 @@
             <x-responsive-nav-link href="{{ route('registrations') }}" :active="request()->routeIs('registrations')">
                 {{ __('Registrations') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('records') }}" :active="request()->routeIs('records')">
+            <x-responsive-nav-link href="{{ route('records.create') }}" :active="request()->routeIs('records')">
                 {{ __('Records') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('payments') }}" :active="request()->routeIs('payments')">
