@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Payrolls;
 use Carbon\Carbon;
 use App\Models\Farmer;
 use Livewire\Component;
@@ -17,8 +18,14 @@ class DailyRecords extends Component
 
     public function updatedFarmerId($value)
     {
-        // Fetch the farmer name based on the selected ID and assign it to $farmer_name
-        $this->farmer_name = Farmer::find($value)->name;
+        try {
+            // Fetch the farmer name based on the selected ID and assign it to $farmer_name
+            $farmer = Farmer::findOrFail($value);
+            $this->farmer_name = $farmer->name;
+        } catch (\Exception $e) {
+            // If the farmer is not found, throw a validation exception
+            throw ValidationException::withMessages(['farmer_id' => 'Selected farmer does not exist.']);
+        }
     }
 
     public function mount()
@@ -54,17 +61,18 @@ class DailyRecords extends Component
             'tea_quantity' => $validatedData['tea_quantity'],
         ]);
 
-        // Reset the form fields after successful submission
-        $this->reset(['farmer_id', 'farmer_name', 'tea_quantity']);
-
         // Optionally, you can add a success message
         session()->flash('success', 'Daily tea supply record saved successfully!');
+
+        // Reset the form fields after successful submission
+        $this->reset(['farmer_id', 'farmer_name', 'tea_quantity']);
     }
     public function render()
     {
         return view('livewire.daily-records');
     }
     // Other methods...
+
 }
 
 

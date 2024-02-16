@@ -17,9 +17,11 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="flex space-x-3 items-center">
-                    <x-button wire:click="getTeaRecords" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Get Tea Records</x-button>
-                </div>
+
+                    <div class="flex space-x-3 items-center">
+                        <x-button wire:click="getTeaRecords" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Get Tea Records</x-button>
+                    </div>
+
             </div>
         </div>
     </div>

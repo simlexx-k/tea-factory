@@ -32,8 +32,16 @@
                 <x-input id="tea_quantity" type="number" class="mt-1 block w-full" wire:model="tea_quantity" required />
                 <x-input-error for="tea_quantity" class="mt-2" />
             </div>
-        </x-slot>
+            <div class="col-span-6 sm:col-span-4">
+                @if (session()->has('success'))
+                    <div id="alert-tea-record" class="alert alert-success col-span-6 sm:col-span-4">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                <x-input-error for="tea_quantity" class="mt-2" />
+            </div>
 
+        </x-slot>
 
         <x-slot name="actions">
             <x-button>
@@ -41,4 +49,9 @@
             </x-button>
         </x-slot>
     </x-form-section>
+    <style>
+        .alert-success{
+            color: white;
+        }
+    </style>
 </div>

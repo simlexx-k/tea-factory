@@ -56,5 +56,3 @@ use App\Http\Controllers\PickPointController;
 Route::get('/pickpoints/create', [PickPointController::class, 'create'])->name('pickpoints.create');
 Route::post('/pickpoints', [PickPointController::class, 'store'])->name('pickpoints.store');
 
-
-
