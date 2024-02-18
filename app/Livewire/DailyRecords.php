@@ -14,6 +14,7 @@ class DailyRecords extends Component
     public $farmer_id;
     public $farmer_name;
     public $supply_date;
+    public $pay_per_kg = 45;
     public $tea_quantity;
 
     public function updatedFarmerId($value)
@@ -40,6 +41,7 @@ class DailyRecords extends Component
         $validatedData = $this->validate([
             'farmer_id' => 'required|exists:farmers,id',
             'supply_date' => 'required|date',
+            'pay_per_kg' => 'required|int',
             'tea_quantity' => 'required|numeric|min:0',
         ]);
 
@@ -58,6 +60,7 @@ class DailyRecords extends Component
             'farmer_id' => $validatedData['farmer_id'],
             'farmer_name' => $this->farmer_name, // Assign the farmer name directly
             'supply_date' => $validatedData['supply_date'],
+            'pay_per_kg' =>$validatedData['pay_per_kg'],
             'tea_quantity' => $validatedData['tea_quantity'],
         ]);
 

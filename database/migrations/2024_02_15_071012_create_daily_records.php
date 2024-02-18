@@ -13,6 +13,7 @@ class CreateDailyRecords extends Migration
             $table->unsignedBigInteger('farmer_id');
             $table->string('farmer_name');
             $table->date('supply_date');
+            $table->integer('pay_per_kg');
             $table->decimal('tea_quantity', 8, 2);
             $table->timestamps();
 

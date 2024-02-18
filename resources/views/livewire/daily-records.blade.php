@@ -28,6 +28,12 @@
             </div>
 
             <div class="col-span-6 sm:col-span-4">
+                <x-label for="pay_per_kg" value="{{ __('Pay Rate') }}" />
+                <x-input id="pay_per_kg" type="text" class="mt-1 block w-full" wire:model="pay_per_kg" disabled />
+                <x-input-error for="pay_per_kg" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-4">
                 <x-label for="tea_quantity" value="{{ __('Tea Quantity (kgs)') }}" />
                 <x-input id="tea_quantity" type="number" class="mt-1 block w-full" wire:model="tea_quantity" required />
                 <x-input-error for="tea_quantity" class="mt-2" />
